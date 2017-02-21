@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping
+        xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="com.bb166.foruminternetowe.Entities.Message" table = "message">
+        <id name="id" column = "idMessage">
+            <generator class="increment"/>
+        </id>
+        <property name="title" column="title"/>
+        <property name="text" column="text"/>
+        <property name="author" column="authorName"/>
+        <property name="date" column="date"/>
+        <many-to-one name="owner" column="idUser" class="com.bb166.foruminternetowe.Entities.User" />
+    </class>
+</hibernate-mapping>

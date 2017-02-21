@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping
+        xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+<class name="com.bb166.foruminternetowe.Entities.Post" table="post">
+    <id name="id" column="idPost">
+        <generator class="increment"/>
+    </id>
+    <property name="text" column="text"/>
+    <property name="number" column="number"/>
+    <property name="date" column="date"/>
+    <many-to-one name="author" class="com.bb166.foruminternetowe.Entities.User" column="idUser" access="property"/>
+    <many-to-one name="topic" class = "com.bb166.foruminternetowe.Entities.Topic" column="idTopic"/>
+</class>
+</hibernate-mapping>

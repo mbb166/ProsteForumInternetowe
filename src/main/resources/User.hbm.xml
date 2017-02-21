@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping xmlns = "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <class name = "com.bb166.foruminternetowe.Entities.User" table="user">
+        <id name = "id" column="idUser">
+            <generator class="increment"/>
+        </id>
+        <property name="username" column = "username"/>
+        <property name="password" column="password"/>
+        <property name="active" column="active"/>
+        <property name="role" column="role"/>
+        <property name="email" column="email"/>
+        <set name="topicSet" cascade="all-delete-orphan" inverse="true">
+            <key column="idUser"/>
+            <one-to-many class="com.bb166.foruminternetowe.Entities.Topic"/>
+        </set>
+        <set name="postSet" cascade="all-delete-orphan" inverse="true">
+            <key column="idUser"/>
+            <one-to-many class="com.bb166.foruminternetowe.Entities.Post"/>
+        </set>
+        <set name="messageSet" cascade="all-delete-orphan" inverse="true">
+            <key column="idUser"/>
+            <one-to-many class="com.bb166.foruminternetowe.Entities.Message"/>
+        </set>
+    </class>
+</hibernate-mapping>

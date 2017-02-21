@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping
+        xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="com.bb166.foruminternetowe.Entities.Topic" table="topic">
+        <id name="id" column="idTopic">
+            <generator class="increment"/>
+        </id>
+        <property name="title" column="title" access="property"/>
+        <many-to-one name="author" class="com.bb166.foruminternetowe.Entities.User" column="idUser" access="property"/>
+        <set name="postSet" cascade="all-delete-orphan" inverse="true" access="property">
+            <key column="idTopic"/>
+            <one-to-many class="com.bb166.foruminternetowe.Entities.Post"/>
+        </set>
+        <many-to-one name="section" class="com.bb166.foruminternetowe.Entities.Section" column="idSection"/>
+    </class>
+</hibernate-mapping>
