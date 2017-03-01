@@ -83,6 +83,7 @@ public class MessageController {
         message.setTitle(title);
         session.persist(message);
         transaction.commit();
+        session.close();
 
         return "redirect:/messages";
     }
