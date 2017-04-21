@@ -27,7 +27,6 @@ public class CaptchaGenerator {
         this.bufferedImage = bufferedImage;
         this.font = font;
         this.byteArrayOutputStream = byteArrayOutputStream;
-
     }
 
     public Captcha generateCaptcha(){
