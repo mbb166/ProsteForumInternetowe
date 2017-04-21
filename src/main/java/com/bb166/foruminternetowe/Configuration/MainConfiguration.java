@@ -53,7 +53,7 @@ public class MainConfiguration extends WebMvcConfigurerAdapter {
         javaMailSender.setHost("poczta.o2.pl");
         javaMailSender.setPort(465);
         javaMailSender.setUsername("lodowy123");
-        javaMailSender.setPassword("112");
+        javaMailSender.setPassword("112112");
         return javaMailSender;
     }
 }
